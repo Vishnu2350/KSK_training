@@ -1,0 +1,27 @@
+/* Styles defined in sampleSite1.css (will overwrite some styles from sampleSite.css) */
+
+/* This will apply the same styles to the div but since it's identical, there's no visual change */
+div {
+    height: 50vh;
+    width: 50vw;
+    border: 1px dotted blue;
+    background-color: lightgrey;
+    background-image: url(https://img.freepik.com/premium-vector/podium-dark-blue-gradient-product-platform-presentation-background-mockup-stage-product_227984-1374.jpg);
+    background-size: 100%;
+}
+
+/* This will overwrite the color for the paragraph with id 'p1' */
+#p1 {
+    font-size: 20px;
+    color: brown; /* Same as in sampleSite.css, no overwrite occurs here */
+}
+
+/* This will overwrite the color for the paragraph with class 'intro' */
+.intro {
+    color: rgba(246, 14, 6, 0.792); /* Semi-transparent red color */
+}
+
+/* This will overwrite the background color for the whole page */
+body {
+    background-color: rgb(233, 206, 5); /* Yellow background */
+}

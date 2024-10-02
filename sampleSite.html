@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Overwrite Example</title>
+
+    <!-- Link to the first CSS file (sampleSite.css) -->
+    <link rel="stylesheet" href="sampleSite.css">
+
+    <!-- Link to the second CSS file (sampleSite1.css) -->
+    <!-- This file will overwrite conflicting styles from the first file -->
+    <link rel="stylesheet" href="sampleSite1.css">
+</head>
+<body>
+    <!-- This div will have styles from both CSS files -->
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum at nulla magnam provident autem quasi.
+    </div>
+
+    <!-- Paragraph with id 'p1', styled differently in both CSS files -->
+    <p id="p1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, nam. Libero suscipit soluta voluptatem.
+    </p>
+
+    <!-- Paragraph with class 'intro', also styled differently in both CSS files -->
+    <p class="intro">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quos minus et.
+    </p>
+
+    <!-- Another paragraph without any specific id or class. Will not be affected by CSS files directly. -->
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, modi cum velit amet qui quia ratione.
+    </p>
+</body>
+</html>

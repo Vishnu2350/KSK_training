@@ -1,0 +1,27 @@
+/* Styles defined in sampleSite.css */
+
+/* This will style the div with a border, background color, and an image */
+div {
+    height: 50vh;
+    width: 50vw;
+    border: 1px dotted blue;
+    background-color: lightgrey;
+    background-image: url(https://img.freepik.com/premium-vector/podium-dark-blue-gradient-product-platform-presentation-background-mockup-stage-product_227984-1374.jpg);
+    background-size: 100%;
+}
+
+/* This will style the paragraph with id 'p1' */
+#p1 {
+    font-size: 20px;
+    color: brown;
+}
+
+/* This will style the paragraph with class 'intro' */
+.intro {
+    color: rgb(246, 6, 222); /* Pink color */
+}
+
+/* This sets the background color for the whole page */
+body {
+    background-color: aquamarine; /* Light greenish-blue background */
+}
