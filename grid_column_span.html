@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid with Column Spans</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-gap: 10px;
+      background-color: #ddd;
+      padding: 10px;
+    }
+
+    .grid-item {
+      background-color: #2ecc71;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+    }
+
+    .item1 {
+      grid-column: 1 / 4; /* Span across all 3 columns */
+    }
+
+    .item2 {
+      grid-row: 2 / 4; /* Span across two rows */
+    }
+  </style>
+</head>
+<body>
+
+<div class="grid-container">
+  <div class="grid-item item1">Header (1)</div>
+  <div class="grid-item item2">Sidebar (2)</div>
+  <div class="grid-item">Content (3)</div>
+  <div class="grid-item">Content (4)</div>
+  <div class="grid-item">Footer (5)</div>
+</div>
+
+</body>
+</html>
