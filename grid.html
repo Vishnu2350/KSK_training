@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basic Grid</title>
+  <title>Grid Layout Example</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
     .grid-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-gap: 20px 40px;/*row, column*/
-      background-color: #ddd;
+      /* 3 columns of equal width */
+      gap: 10px;
+      /* Space between grid items */
       padding: 10px;
+
     }
 
     .grid-item {
-      background-color: #3498db;
+      background-color: #4CAF50;
       color: white;
-      text-align: center;
       padding: 20px;
-      font-size: 24px;
+      text-align: center;
+      border: 1px solid #fff;
     }
   </style>
 </head>
+
 <body>
-
-<div class="grid-container">
-  <div class="grid-item">1</div>
-  <div class="grid-item">2</div>
-  <div class="grid-item">3</div>
-  <div class="grid-item">4</div>
-  <div class="grid-item">5</div>
-  <div class="grid-item">6</div>
-  <div class="grid-item">7</div>
-  <div class="grid-item">8</div>
-  <div class="grid-item">9</div>
-  
-</div>
-
+  <div class="grid-container">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+  </div>
 </body>
+
 </html>

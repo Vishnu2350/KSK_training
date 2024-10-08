@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tutorial - All Tags Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+            background: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in;
+        }
+
+        section {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to HTML All Tags Example</h1>
+        <nav>
+            <a href="#forms">Forms</a> |
+            <a href="#tables">Tables</a> |
+            <a href="#media">Media</a> |
+            <a href="#lists">Lists</a> |
+            <a href="#footer">Footer</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>This is an example HTML document that showcases commonly used HTML tags.</p>
+            <blockquote cite="https://www.w3schools.com">
+                "HTML is the standard markup language for creating Web pages." - Statement
+            </blockquote>
+        </section>
+
+        <section id="text-formatting">
+            <h2>Text Formatting</h2>
+            <p><strong>Strong</strong> and <em>Emphasized</em> text, <u>underlined text</u>, and <mark>highlighted text</mark>.</p>
+            <p>Superscript: H<sup>2</sup>O and Subscript: E = mc<sub>2</sub></p>
+            <code>&lt;p&gt;This is a sample code.&lt;/p&gt;</code>
+        </section>
+
+        <section id="links-images">
+            <h2>Links and Images</h2>
+            <a href="https://academic.vyoobam.com/" target="_blank">Visit Vyoobam</a>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhlE-Um8g3shi7ZTBFy_-2J_T2KqUdOubQKPHhvwo&usqp=CAE&s" alt="vyoobam Logo" width="200">
+        </section>
+
+        <section id="lists">
+            <h2>Lists</h2>
+            <h3>Ordered List</h3>
+            <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ol>
+
+            <h3>Unordered List</h3>
+            <ul>
+                <li>Item A</li>
+                <li>Item B</li>
+                <li>Item C</li>
+            </ul>
+
+            <h3>Description List</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>A markup language for creating web pages.</dd>
+                <dt>CSS</dt>
+                <dd>A stylesheet language for styling web pages.</dd>
+            </dl>
+        </section>
+
+        <section id="tables">
+            <h2>Tables</h2>
+            <table border="1">
+                <caption>Sample Table</caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>25</td>
+                        <td>New York</td>
+                    </tr>
+                    <tr>
+                        <td>Jane</td>
+                        <td>30</td>
+                        <td>Los Angeles</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="forms">
+            <h2>Forms</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
+        <section id="media">
+            <h2>Media Elements</h2>
+            <h3>Image</h3>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO8R-XjQ9RVHLUo9eTXI0A183Ymy2aTLjHmQ&s" alt="Placeholder Image">
+
+            <h3>Video</h3>
+            <video controls>
+                <source src="video_file.mp4" type="video/mp4"> <!-- Replace with your actual video source -->
+                Your browser does not support HTML video.
+            </video>
+
+            <h3>Audio</h3>
+            <audio controls>
+                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <h3>YouTube Video</h3>
+            
+        </section>
+
+        <section id="semantic-tags">
+            <h2>Semantic Tags</h2>
+            <article>
+                <h3>Sample Article</h3>
+                <p>This is an example of an article. It contains its own heading and content.</p>
+            </article>
+            <aside>
+                <h3>Related Information</h3>
+                <p>This is an aside section, often used for additional information.</p>
+            </aside>
+        </section>
+        
+    </main>
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/KvzILFPpS44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   </div>
+
+    <footer id="footer">
+        <p>Created by vyoobam HTML & CSS Tutorial Example.</p>
+    </footer>
+
+</body>
+
+</html>

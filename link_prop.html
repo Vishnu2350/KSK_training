@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      list-style: none;
+      display: inline;
+    }
+
+    /* Unvisited link */
+    a:link {
+      color: blue;
+      text-decoration: none;
+    }
+
+    /* Visited link */
+    a:visited {
+      color: purple;
+      text-decoration: none;
+    }
+
+    /* Mouse over link */
+    a:hover {
+      color: red;
+      text-decoration: underline;
+    }
+
+    /* Selected link */
+    a:active {
+      color: orange;
+      text-decoration: underline;
+    }
+
+    .active {
+      background-color: rgb(195, 195, 199);
+      color: black !important;
+    }
+
+    #div1 {
+      border: 1px solid #ccc;
+      float: left;
+    }
+
+
+    #div2 {
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li><a href="/home" target="_blank">Home</a></li>
+    <li><a href="/abt" class="active">About us</a></li>
+    <li><a href="/cts">Contact us</a></li>
+    <li><a href="/serv">Services</a></li>
+  </ul>
+  <div id="div1" style="width: 250px; height: 100px; overflow: auto;">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quidem dolore reprehenderit veniam assumenda,
+      eveniet incidunt sed earum voluptatibus in, aperiam nostrum modi expedita corporis tempora, consequatur possimus
+      omnis fuga.</p>
+  </div>
+  <div id="div2" style="width: 250px; height: 100px; overflow: auto;">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsa nihil aliquid itaque illo veniam. Dolores
+      ratione quidem et incidunt aut earum, blanditiis sed ipsa tempora, asperiores consequatur, nulla consectetur?</p>
+  </div>
+</body>
+
+</html>

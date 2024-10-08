@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d3cfcf;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            /* height: 150px; */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0px 20px 35px rgba(217, 23, 23, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+            background: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: black;
+            background-color: #ddd;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateX(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        ul {
+            list-style-type: circle;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                /* opacity: 0; */
+                background-color: red;
+            }
+
+            to {
+                /* opacity: 1; */
+                background-color: yellow;
+            }
+        }
+
+        main {
+            animation: fadeIn 1s ease-in;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Welcome to the Advanced CSS Tutorial</header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Tutorials</a>
+        <a href="#">Examples</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>HTML and CSS are the fundamental technologies for building web pages. HTML provides the structure of the
+                page, while CSS defines its layout and style.</p>
+        </section>
+
+        <section>
+            <h2>Benefits of Learning HTML & CSS</h2>
+            <ul>
+                <li>Easy to learn and use</li>
+                <li>Defines the structure and design of web pages</li>
+                <li>Core skills for front-end web development</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Flexbox and Grid</h2>
+            <p>CSS Flexbox and Grid layout modules provide powerful tools for creating responsive designs.</p>
+        </section>
+
+        <button onclick="alert('Button clicked!')">Click Me</button>
+    </main>
+
+    <footer>
+        &copy; 2024 All Rights Reserved
+    </footer>
+</body>
+
+</html>

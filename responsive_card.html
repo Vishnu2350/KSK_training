@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Flexbox Cards</title>
+  <style>
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      /* justify-content: space-evenly; */
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      width: 200px;
+      padding: 20px;
+      background-color: #f1f1f1;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+
+    .card img {
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card-container">
+    <div class="card">
+      <img src="https://via.placeholder.com/150" alt="Product" />
+      <p>Product 1</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/150" alt="Product" />
+      <p>Product 2</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/150" alt="Product" />
+      <p>Product 3</p>
+    </div>
+  </div>
+</body>
+
+</html>
