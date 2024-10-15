@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Objects & Constructors Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Objects & Constructors Example</h1>
+    </header>
+
+    <!-- JavaScript Display Objects -->
+    <section>
+        <h2>JavaScript Display Objects</h2>
+        <button onclick="displayObject()">Display Object Properties</button>
+        <p class="result" id="displayObjectResult">N/A</p>
+    </section>
+
+    <!-- JavaScript Object Constructors -->
+    <section>
+        <h2>JavaScript Object Constructors</h2>
+        <button onclick="displayNewObject()">Create New Object</button>
+        <p class="result" id="constructorObjectResult">N/A</p>
+    </section>
+
+    <!-- JavaScript Functions for Objects -->
+    <script>
+        // JavaScript Object Example for Displaying
+        const car = {
+            brand: "Toyota",
+            model: "Corolla",
+            year: 2020,
+            fullDetails: function () {
+                return this.brand + " " + this.model + " (" + this.year + ")";
+            }
+        };
+
+        // Function to display object properties
+        function displayObject() {
+            let result = "Brand: " + car.brand + "<br>" +
+                         "Model: " + car.model + "<br>" +
+                         "Year: " + car.year + "<br>" +
+                         "Full Details: " + car.fullDetails();
+            document.getElementById("displayObjectResult").innerHTML = result;
+        }
+
+        // JavaScript Constructor Function
+        function Person(firstName, lastName, age, city) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.city = city;
+            this.fullName = function () {
+                return this.firstName + " " + this.lastName;
+            };
+        }
+
+        // Function to create new object using constructor
+        function displayNewObject() {
+            // Create a new object using the Person constructor
+            const person1 = new Person("Jane", "Doe", 28, "Los Angeles");
+            
+            let result = "New Object Created:<br>" +
+                         "Name: " + person1.fullName() + "<br>" +
+                         "Age: " + person1.age + "<br>" +
+                         "City: " + person1.city;
+            document.getElementById("constructorObjectResult").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

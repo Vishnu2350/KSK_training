@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Comprehensive Example</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Comprehensive Example</h1>
+    </header>
+
+    <section>
+        <h2>JavaScript Types</h2>
+        <pre id="typeExample"></pre>
+    </section>
+
+    <section>
+        <h2>Arithmetic Operators</h2>
+        <pre id="arithmeticOperators"></pre>
+    </section>
+
+    <section>
+        <h2>Callbacks</h2>
+        <pre id="callbackExample"></pre>
+    </section>
+
+    <section>
+        <h2>Promises</h2>
+        <pre id="promiseExample"></pre>
+    </section>
+
+    <section>
+        <h2>Async/Await</h2>
+        <pre id="asyncAwaitExample"></pre>
+    </section>
+
+    <section>
+        <h2>JavaScript Objects</h2>
+        <pre id="objectExample"></pre>
+    </section>
+
+    <section>
+        <h2>JavaScript Arrays</h2>
+        <pre id="arrayExample"></pre>
+    </section>
+
+    <section>
+        <h2>JavaScript Errors</h2>
+        <pre id="errorExample"></pre>
+    </section>
+
+    <script>
+        // JavaScript Types
+        const typesExample = `
+        String: "Hello, World!"
+        Number: 42
+        BigInt: 1234567890123456789012345678901234567890n
+        Boolean: true
+        Undefined: undefined
+        Null: null
+        Symbol: Symbol('unique')
+        Object: { name: "John", age: 30 }
+        `;
+        document.getElementById('typeExample').innerText = typesExample;
+
+        // Arithmetic Operators
+        let a = 10, b = 5;
+        let arithmeticResult = `
+        a + b = ${a + b} // Addition
+        a - b = ${a - b} // Subtraction
+        a * b = ${a * b} // Multiplication
+        a / b = ${a / b} // Division
+        a % b = ${a % b} // Modulus
+        `;
+        document.getElementById('arithmeticOperators').innerText = arithmeticResult;
+
+        // Callbacks
+        function fetchDataWithCallback(callback) {
+            setTimeout(() => {
+                const data = { message: "Data fetched using Callback!" };
+                callback(data);
+            }, 1000);
+        }
+
+        fetchDataWithCallback((data) => {
+            document.getElementById('callbackExample').innerText = data.message;
+        });
+
+        // Promises
+        function fetchDataWithPromise() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const success = true; // Simulate success or failure
+                    if (success) {
+                        resolve({ message: "Data fetched using Promise!" });
+                    } else {
+                        reject("Error fetching data with Promise");
+                    }
+                }, 1000);
+            });
+        }
+
+        fetchDataWithPromise()
+            .then((data) => {
+                document.getElementById('promiseExample').innerText = data.message;
+            })
+            .catch((error) => {
+                document.getElementById('promiseExample').innerText = error;
+            });
+
+        // Async/Await
+        async function fetchDataWithAsync() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve({ message: "Data fetched using Async/Await!" });
+                }, 1000);
+            });
+        }
+
+        async function main() {
+            try {
+                const data = await fetchDataWithAsync();
+                document.getElementById('asyncAwaitExample').innerText = data.message;
+            } catch (error) {
+                document.getElementById('asyncAwaitExample').innerText = error;
+            }
+        }
+
+        main();
+
+        // JavaScript Objects
+        const person = {
+            name: "John",
+            age: 30,
+            greet() {
+                return `Hello, my name is ${this.name}`;
+            }
+        };
+        document.getElementById('objectExample').innerText = person.greet();
+
+        // JavaScript Arrays
+        const fruits = ["Apple", "Banana", "Cherry"];
+        let arrayResult = `
+        Fruits Array: ${fruits.join(", ")}
+        First Fruit: ${fruits[0]}
+        Number of Fruits: ${fruits.length}
+        `;
+        document.getElementById('arrayExample').innerText = arrayResult;
+
+        // JavaScript Errors
+        try {
+            throw new Error("This is an error message");
+        } catch (error) {
+            document.getElementById('errorExample').innerText = error.message;
+        }
+    </script>
+
+</body>
+
+</html>

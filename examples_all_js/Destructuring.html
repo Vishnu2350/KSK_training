@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Destructuring Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Destructuring</h1>
+    </header>
+
+    <section>
+        <h2>Array Destructuring</h2>
+        <button onclick="arrayDestructuring()">Run Array Destructuring Example</button>
+        <p class="result" id="arrayResult">Click the button to see the result.</p>
+    </section>
+
+    <section>
+        <h2>Object Destructuring</h2>
+        <button onclick="objectDestructuring()">Run Object Destructuring Example</button>
+        <p class="result" id="objectResult">Click the button to see the result.</p>
+    </section>
+
+    <script>
+        // Array Destructuring Example
+        function arrayDestructuring() {
+            const fruits = ['Apple', 'Banana', 'Cherry', 'Date'];
+            const [first, second, ...rest] = fruits;
+            console.log(rest);
+            const result = `
+                Original Array: ${fruits}<br>
+                First Fruit: ${first}<br>
+                Second Fruit: ${second}<br>
+                Remaining Fruits: ${rest}
+            `;
+
+            document.getElementById("arrayResult").innerHTML = result;
+        }
+
+        // Object Destructuring Example
+        function objectDestructuring() {
+            const person = {
+                name: 'Alice',
+                age: 30,
+                city: 'New York',
+                occupation: 'Engineer'
+            };
+            const { name, age, ...details } = person;
+            console.log(details);
+
+            const result = `
+                Original Object: ${JSON.stringify(person)}<br>
+                Name: ${name}<br>
+                Age: ${age}<br>
+                Other Details: ${JSON.stringify(details)}
+            `;
+
+            document.getElementById("objectResult").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

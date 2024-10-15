@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tutorial - All Tags Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+            background: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in;
+        }
+
+        section {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- JavaScript to use var, let, const -->
+    <script>
+        // Example with var (function-scoped or globally scoped)
+        var message = "Hello, this message is declared using var!";
+        console.log(message);
+
+        function showVarMessage() {
+            document.getElementById("varMessage").innerText = message;
+        }
+
+        // Example with let (block-scoped)
+        let counter = 0;
+
+
+        function incrementCounter() {
+        
+            counter++;
+            document.getElementById("counter").innerText = "Counter: " + counter;
+        }
+
+        // Example with const (constant value, cannot be reassigned)
+        const pi = 3.14159;
+
+        function showPiValue() {
+            document.getElementById("piValue").innerText = "Value of Pi: " + pi;
+        }
+    </script>
+
+    <!-- Buttons to trigger the JS functionality -->
+    <section>
+        <h2>JavaScript Examples (var, let, const)</h2>
+        <p id="varMessage">Click the button to display the message from the 'var' variable.</p>
+        <button onclick="showVarMessage()">Show var Message</button>
+
+        <p id="counter">Counter: 0</p>
+        <button onclick="incrementCounter()">Increment Counter (let)</button>
+
+        <p id="piValue">Value of Pi: Not displayed yet</p>
+        <button onclick="showPiValue()">Show Pi Value (const)</button>
+    </section>
+
+</body>
+
+</html>

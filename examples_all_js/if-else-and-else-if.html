@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript if, else, and else if Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Control Flow: if, else, and else if</h1>
+    </header>
+
+    <section>
+        <h2>Using if, else, and else if Statements</h2>
+        <p>In JavaScript, you can control the flow of your program using <strong>if</strong>, <strong>else</strong>, and <strong>else if</strong> statements. These statements allow you to execute different blocks of code based on certain conditions.</p>
+        
+        <h3>Examples:</h3>
+        <button onclick="checkAge()">Check Age</button>
+        <p class="result" id="ageResult">Click the button to check age.</p>
+
+        <button onclick="checkTemperature()">Check Temperature</button>
+        <p class="result" id="tempResult">Click the button to check temperature.</p>
+    </section>
+
+    <script>
+        // Function to check age
+        function checkAge() {
+            const age = parseInt(prompt("Enter your age:")); // Prompt user to enter their age
+
+            if (age < 13) {
+                document.getElementById("ageResult").innerHTML = "You are a child.";
+            } else if (age >= 13 && age < 20) {
+                document.getElementById("ageResult").innerHTML = "You are a teenager.";
+            } else if (age >= 20 && age < 65) {
+                document.getElementById("ageResult").innerHTML = "You are an adult.";
+            } else {
+                document.getElementById("ageResult").innerHTML = "You are a senior.";
+            }
+        }
+
+        // Function to check temperature
+        function checkTemperature() {
+            const temperature = parseInt(prompt("Enter the temperature in Celsius:")); // Prompt user to enter temperature
+
+            if (temperature < 0) {
+                document.getElementById("tempResult").innerHTML = "It's freezing!";
+            } else if (temperature >= 0 && temperature < 20) {
+                document.getElementById("tempResult").innerHTML = "It's quite chilly.";
+            } else if (temperature >= 20 && temperature < 30) {
+                document.getElementById("tempResult").innerHTML = "It's warm.";
+            } else {
+                document.getElementById("tempResult").innerHTML = "It's hot!";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

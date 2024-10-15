@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Scope</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .code {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Scope</h1>
+    </header>
+
+    <section>
+        <h2>What is Scope?</h2>
+        <p>Scope in JavaScript refers to the current context of execution, which determines the accessibility of variables. There are two main types of scope:</p>
+        <ul>
+            <li><strong>Global Scope:</strong> Variables declared outside any function are in the global scope and can be accessed anywhere in the code.</li>
+            <li><strong>Local Scope:</strong> Variables declared within a function are in the local scope and can only be accessed within that function.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Global Scope Example</h2>
+        <button onclick="globalScopeExample()">Check Global Scope</button>
+        <p class="result" id="globalResult">Result will appear here.</p>
+    </section>
+
+    <section>
+        <h2>Local Scope Example</h2>
+        <button onclick="localScopeExample()">Check Local Scope</button>
+        <p class="result" id="localResult">Result will appear here.</p>
+    </section>
+
+    <section>
+        <h2>Block Scope Example</h2>
+        <button onclick="blockScopeExample()">Check Block Scope</button>
+        <p class="result" id="blockResult">Result will appear here.</p>
+    </section>
+
+    <section>
+        <h2>Variable Hoisting Example</h2>
+        <button onclick="hoistingExample()">Check Hoisting</button>
+        <p class="result" id="hoistingResult">Result will appear here.</p>
+    </section>
+
+    <script>
+        // Global variable
+        var globalVar = "I am a global variable";
+
+        function globalScopeExample() {
+            document.getElementById("globalResult").innerHTML = globalVar;
+        }
+
+        function localScopeExample() {
+            var localVar = "I am a local variable"; // Local variable
+            document.getElementById("localResult").innerHTML = localVar;
+
+            // Trying to access localVar outside its scope
+            if (true) {
+                var testVar = "Testing block scope with var";
+            }
+            document.getElementById("localResult").innerHTML += "<br>" + testVar; // Accessible due to function scope
+        }
+
+        function blockScopeExample() {
+            if (true) {
+                let blockVar = "I am a block-scoped variable"; // Block-scoped variable
+                document.getElementById("blockResult").innerHTML = blockVar;
+            }
+            // Trying to access blockVar outside its scope
+            try {
+                document.getElementById("blockResult").innerHTML += "<br>" + blockVar; // Error: blockVar is not defined
+            } catch (error) {
+                document.getElementById("blockResult").innerHTML += "<br>Error: " + error.message;
+            }
+        }
+
+        function hoistingExample() {
+            try {
+                hoistedVar = "I have been hoisted"; // Variable declaration is hoisted
+                document.getElementById("hoistingResult").innerHTML = hoistedVar;
+                var hoistedVar; // Declaration is hoisted, but not the assignment
+            } catch (error) {
+                document.getElementById("hoistingResult").innerHTML = "Error: " + error.message;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

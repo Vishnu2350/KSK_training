@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Date Objects Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button, input {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover, input:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Date Objects Example</h1>
+    </header>
+
+    <!-- JavaScript Date Objects Section -->
+    <section>
+        <h2>JavaScript Date Objects</h2>
+
+        <!-- Create Date Object -->
+        <button onclick="showDateObject()">Show Date Object</button>
+        <p class="result" id="dateObjectResult">Click the button to see the date object.</p>
+
+        <!-- Date Formatting -->
+        <button onclick="showDateFormat()">Show Date Format</button>
+        <p class="result" id="dateFormatResult">Click the button to see date formatting.</p>
+
+        <!-- Get Methods -->
+        <button onclick="showDateGetMethods()">Show Get Methods</button>
+        <p class="result" id="dateGetMethodsResult">Click the button to see get methods.</p>
+
+        <!-- Set Methods -->
+        <button onclick="showDateSetMethods()">Show Set Methods</button>
+        <p class="result" id="dateSetMethodsResult">Click the button to see set methods.</p>
+    </section>
+
+    <!-- JavaScript for Date Operations -->
+    <script>
+        // Show Date Object
+        function showDateObject() {
+            const now = new Date();
+            const result = `
+                Current Date Object: ${now}
+            `;
+            document.getElementById("dateObjectResult").innerHTML = result;
+        }
+
+        // Show Date Format
+        function showDateFormat() {
+            const now = new Date();
+            const formattedDate = now.toLocaleString(); // Format to local string
+            const isoString = now.toISOString(); // ISO format
+            const utcString = now.toUTCString(); // UTC format
+
+            const result = `
+                Local Date Format: ${formattedDate}<br>
+                ISO Format: ${isoString}<br>
+                UTC Format: ${utcString}
+            `;
+            document.getElementById("dateFormatResult").innerHTML = result;
+        }
+
+        // Show Get Methods
+        function showDateGetMethods() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth() + 1; // Months are 0-indexed
+            const date = now.getDate();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            const result = `
+                Year: ${year}<br>
+                Month: ${month}<br>
+                Date: ${date}<br>
+                Hours: ${hours}<br>
+                Minutes: ${minutes}<br>
+                Seconds: ${seconds}
+            `;
+            document.getElementById("dateGetMethodsResult").innerHTML = result;
+        }
+
+        // Show Set Methods
+        function showDateSetMethods() {
+            const date = new Date();
+            date.setFullYear(2025);
+            date.setMonth(0); // January
+            date.setDate(1);
+            date.setHours(0);
+            date.setMinutes(0);
+            date.setSeconds(0);
+
+            const result = `
+                Modified Date Object: ${date}
+            `;
+            document.getElementById("dateSetMethodsResult").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

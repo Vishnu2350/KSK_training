@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Sets and Maps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Sets and Maps</h1>
+    </header>
+
+    <section>
+        <h2>JavaScript Sets</h2>
+        <button onclick="setExample()">Run Set Example</button>
+        <p class="result" id="setResult">Click the button to see the result.</p>
+    </section>
+
+    <section>
+        <h2>JavaScript Maps</h2>
+        <button onclick="mapExample()">Run Map Example</button>
+        <p class="result" id="mapResult">Click the button to see the result.</p>
+    </section>
+
+    <script>
+        // JavaScript Sets Example
+        function setExample() {
+            const mySet = new Set();
+
+            // Add values to the set
+            mySet.add(1);
+            mySet.add(2);
+            mySet.add(3);
+            mySet.add(3); // Duplicate value, will be ignored
+            mySet.add(4);
+            mySet.add(5);
+
+            // Remove a value
+            mySet.delete(2);
+
+            // Check for existence
+            const hasThree = mySet.has(3);
+            const hasTwo = mySet.has(2);
+
+            // Convert set to an array for display
+            const setArray = Array.from(mySet);
+
+            document.getElementById("setResult").innerHTML =
+                `Set Values: ${setArray.join(', ')}<br>` +
+                `Has 3? ${hasThree}<br>` +
+                `Has 2? ${hasTwo}<br>`;
+        }
+
+        // JavaScript Maps Example
+        function mapExample() {
+            const myMap = new Map();
+
+            // Set key-value pairs
+            myMap.set('name', 'John');
+            myMap.set('age', 30);
+            myMap.set('city', 'New York');
+
+            // Get values by key
+            const name = myMap.get('name');
+            const age = myMap.get('age');
+
+            // Check for a key
+            const hasCity = myMap.has('city');
+
+            // Remove a key
+            myMap.delete('city');
+
+            // Convert map to an array for display
+            const mapArray = Array.from(myMap.entries());
+
+            document.getElementById("mapResult").innerHTML =
+                `Map Values: ${mapArray.map(entry => `${entry[0]}: ${entry[1]}`).join(', ')}<br>` +
+                `Name: ${name}<br>` +
+                `Age: ${age}<br>` +
+                `Has city? ${hasCity}<br>`;
+        }
+    </script>
+
+</body>
+
+</html>

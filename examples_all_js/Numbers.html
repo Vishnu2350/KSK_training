@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Numbers Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button, input {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover, input:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Numbers Example</h1>
+    </header>
+
+    <!-- JavaScript Numbers Section -->
+    <section>
+        <h2>JavaScript Numbers</h2>
+
+        <!-- Basic Numbers -->
+        <button onclick="showNumbers()">Show Basic Numbers</button>
+        <p class="result" id="basicNumbersResult">Click the button to see basic numbers.</p>
+
+        <!-- BigInt -->
+        <button onclick="showBigInt()">Show BigInt Example</button>
+        <p class="result" id="bigIntResult">Click the button to see BigInt.</p>
+
+        <!-- Number Methods -->
+        <button onclick="showNumberMethods()">Show Number Methods</button>
+        <p class="result" id="numberMethodsResult">Click the button to see number methods.</p>
+
+        <!-- Number Properties -->
+        <button onclick="showNumberProperties()">Show Number Properties</button>
+        <p class="result" id="numberPropertiesResult">Click the button to see number properties.</p>
+    </section>
+
+    <!-- JavaScript for Number Operations -->
+    <script>
+        // Basic Numbers
+        function showNumbers() {
+            const num1 = 42;
+            const num2 = 3.14;
+            const sum = num1 + num2;
+
+            const result = `
+                Integer: ${num1}<br>
+                Float: ${num2}<br>
+                Sum: ${sum}
+            `;
+            document.getElementById("basicNumbersResult").innerHTML = result;
+        }
+
+        // BigInt Example
+        function showBigInt() {
+            const bigInt1 = BigInt(123456789012345678901234567890);
+            const bigInt2 = BigInt(987654321098765432109876543210);
+            const bigIntSum = bigInt1 + bigInt2;
+
+            const result = `
+                BigInt 1: ${bigInt1}<br>
+                BigInt 2: ${bigInt2}<br>
+                Sum of BigInt: ${bigIntSum}
+            `;
+            document.getElementById("bigIntResult").innerHTML = result;
+        }
+
+        // Number Methods
+        function showNumberMethods() {
+            const number = 123.456;
+
+            const result = `
+                Fixed (2 decimals): ${number.toFixed(2)}<br>
+                Exponential: ${number.toExponential(2)}<br>
+                Rounded: ${Math.round(number)}<br>
+                Absolute: ${Math.abs(-number)}<br>
+                Square Root: ${Math.sqrt(number)}
+            `;
+            document.getElementById("numberMethodsResult").innerHTML = result;
+        }
+
+        // Number Properties
+        function showNumberProperties() {
+            const result = `
+                Maximum Safe Integer: ${Number.MAX_SAFE_INTEGER}<br>
+                Minimum Safe Integer: ${Number.MIN_SAFE_INTEGER}<br>
+                Positive Infinity: ${Number.POSITIVE_INFINITY}<br>
+                Negative Infinity: ${Number.NEGATIVE_INFINITY}<br>
+                Not a Number: ${Number.NaN}
+            `;
+            document.getElementById("numberPropertiesResult").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>
