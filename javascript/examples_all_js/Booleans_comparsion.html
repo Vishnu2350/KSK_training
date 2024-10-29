@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Booleans and Comparison Operators</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Booleans and Comparison Operators</h1>
+    </header>
+
+    <section>
+        <h2>Booleans</h2>
+        <p>In JavaScript, a boolean is a data type that can only have one of two values: <strong>true</strong> or <strong>false</strong>.</p>
+        <button onclick="showBooleanExamples()">Show Boolean Examples</button>
+        <p class="result" id="booleanResult">Click the button to see boolean examples.</p>
+    </section>
+
+    <section>
+        <h2>Comparison Operators</h2>
+        <p>Comparison operators are used to compare two values. The result of a comparison is always a boolean value (true or false).</p>
+        <h3>Available Comparison Operators:</h3>
+        <ul>
+            <li>==  : Equal to</li>
+            <li>=== : Strict equal to</li>
+            <li>!=  : Not equal to</li>
+            <li>!== : Strict not equal to</li>
+            <li>< : Less than</li>
+            <li><= : Less than or equal to</li>
+            <li> >  : Greater than</li>
+            <li> >= : Greater than or equal to</li>
+        </ul>
+
+        <h3>Comparison Examples</h3>
+        <button onclick="compareValues()">Compare Values</button>
+        <p class="result" id="comparisonResult">Click the button to compare values.</p>
+    </section>
+
+    <script>
+        // Show Boolean Examples
+        function showBooleanExamples() {
+            let a = true;
+            let b = false;
+            let c = (5 > 3); // true
+            let d = (5 < 3); // false
+
+            const result = `
+                Example 1: ${a} (true)<br>
+                Example 2: ${b} (false)<br>
+                Example 3: 5 > 3: ${c}<br>
+                Example 4: 5 < 3: ${d}
+            `;
+            document.getElementById("booleanResult").innerHTML = result;
+        }
+
+        // Compare Values
+        function compareValues() {
+            const value1 = 10;
+            const value2 = "10";
+
+            const equal = (value1 == value2);         // true, loose equality
+            const strictEqual = (value1 === value2);  // false, strict equality
+            const notEqual = (value1 != value2);       // false, loose inequality
+            const strictNotEqual = (value1 !== value2); // true, strict inequality
+            const greaterThan = (value1 > 5);          // true
+            const lessThan = (value1 < 5);             // false
+            const greaterThanOrEqual = (value1 >= 10); // true
+            const lessThanOrEqual = (value1 <= 10);    // true
+
+            const result = `
+                Comparison: 10 == "10": ${equal} (Loose Equality)<br>
+                Comparison: 10 === "10": ${strictEqual} (Strict Equality)<br>
+                Comparison: 10 != "10": ${notEqual} (Loose Inequality)<br>
+                Comparison: 10 !== "10": ${strictNotEqual} (Strict Inequality)<br>
+                Comparison: 10 > 5: ${greaterThan}<br>
+                Comparison: 10 < 5: ${lessThan}<br>
+                Comparison: 10 >= 10: ${greaterThanOrEqual}<br>
+                Comparison: 10 <= 10: ${lessThanOrEqual}
+            `;
+            document.getElementById("comparisonResult").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

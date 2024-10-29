@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Switch Statement Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Switch Statement</h1>
+    </header>
+
+    <section>
+        <h2>Using the Switch Statement</h2>
+        <p>The <strong>switch</strong> statement is used to perform different actions based on different conditions. It is an alternative to using multiple <strong>if</strong> statements.</p>
+
+        <h3>Example:</h3>
+        <button onclick="checkDay()">Check Day of the Week</button>
+        <p class="result" id="dayResult">Click the button to check the day.</p>
+    </section>
+
+    <script>
+        // Function to check the day of the week
+        function checkDay() {
+            const dayNumber = parseInt(prompt("Enter a number (1-7) to check the day of the week:")); // Prompt user for a day number
+            let dayName;
+
+            switch (dayNumber) {
+                case 1:
+                    dayName = "Monday";
+                    break;
+                case 2:
+                    dayName = "Tuesday";
+                    break;
+                case 3:
+                    dayName = "Wednesday";
+                    break;
+                case 4:
+                    dayName = "Thursday";
+                    break;
+                case 5:
+                    dayName = "Friday";
+                    break;
+                case 6:
+                    dayName = "Saturday";
+                    break;
+                case 7:
+                    dayName = "Sunday";
+                    break;
+                default:
+                    dayName = "Invalid day number. Please enter a number between 1 and 7.";
+                    break;
+            }
+
+            document.getElementById("dayResult").innerHTML = dayName; // Display the result
+        }
+    </script>
+
+</body>
+
+</html>

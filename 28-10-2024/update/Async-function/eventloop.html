@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Store API Products with Pagination</title>
+    <link rel="stylesheet" href="eventloop.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Product List from Fake Store API</h1>
+        <button id="fetchProductsButton">Fetch Products</button>
+
+        <div class="results">
+            <table id="productsTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody id="productsData">
+                    <!-- Product data will be inserted here -->
+                </tbody>
+            </table>
+
+            <div id="pagination" class="pagination">
+                <button id="prevButton" disabled>Previous</button>
+                <span id="pageInfo"></span>
+                <button id="nextButton">Next</button>
+            </div>
+
+            <p id="errorMessage" class="error"></p>
+        </div>
+    </div>
+
+    <script src="eventloop.js"></script>
+</body>
+</html>

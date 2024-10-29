@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button, input {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover, input:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        #hoverMe {
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+
+        #hoverMe:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Events Example</h1>
+    </header>
+
+    <!-- JavaScript Events Section -->
+    <section>
+        <h2>JavaScript Events</h2>
+
+        <!-- Click Event -->
+        <button onclick="handleClick()">Click Me</button>
+        <p class="result" id="clickResult">Click the button to see the result.</p>
+
+        <!-- Mouse Over Event -->
+        <div id="hoverMe" onmouseover="handleMouseOver()" onmouseout="handleMouseOut()">Hover over me!</div>
+        <p class="result" id="hoverResult">Hover over the box above.</p>
+
+        <!-- Keydown Event -->
+        <label for="inputField">Type something: </label>
+        <input type="text" id="inputField" onkeydown="handleKeydown(event)">
+        <p class="result" id="keyResult">Start typing in the input field above.</p>
+    </section>
+
+    <!-- JavaScript for Handling Events -->
+    <script>
+        // Click Event Handler
+        function handleClick() {
+            document.getElementById("clickResult").innerHTML = "Button was clicked!";
+        }
+
+        // Mouseover Event Handler
+        function handleMouseOver() {
+            document.getElementById("hoverResult").innerHTML = "Mouse is over the box!";
+        }
+
+        // Mouseout Event Handler
+        function handleMouseOut() {
+            document.getElementById("hoverResult").innerHTML = "Mouse has left the box.";
+        }
+
+        // Keydown Event Handler
+        function handleKeydown(event) {
+            document.getElementById("keyResult").innerHTML = "You pressed: " + event.key;
+        }
+    </script>
+
+</body>
+
+</html>

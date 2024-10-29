@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Change Text and Color</h2>
+    <button onclick="changeContent()">Change</button>
+    <p id="demo">Old Text</p>
+
+    <script>
+      function changeContent() {
+        const element = document.getElementById("demo");
+        element.textContent = "New Text!";
+        element.style.color = "blue";  // Changing text color
+      }
+    </script>
+  </body>
+</html>

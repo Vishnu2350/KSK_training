@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Quiz Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button,
+        input {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover,
+        input:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        #quizContainer {
+            text-align: center;
+        }
+
+        #question {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        #options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #options li {
+            margin: 5px 0;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #options li:hover {
+            background-color: #f1f1f1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        Sample MCQ Quiz
+    </header>
+
+    <section id="quizContainer">
+        <div id="question"></div>
+        <ul id="options"></ul>
+    </section>
+    <div id="result" class="result" style="display:none;"></div>
+
+    <script>
+        // JSON data for the quiz
+        const quizData = [
+            {
+                "question": "What is the capital of France?",
+                "options": ["Berlin", "Madrid", "Paris", "Rome"],
+                "answer": "Paris"
+            },
+            {
+                "question": "Who wrote 'To Kill a Mockingbird'?",
+                "options": ["Harper Lee", "Jane Austen", "Mark Twain", "F. Scott Fitzgerald"],
+                "answer": "Harper Lee"
+            },
+            {
+                "question": "What is the largest planet in our solar system?",
+                "options": ["Earth", "Jupiter", "Mars", "Saturn"],
+                "answer": "Jupiter"
+            }
+        ];
+
+        // Class to represent a Question
+        class Question {
+            constructor(data) {
+                this.question = data.question;
+                this.options = data.options;
+                this.answer = data.answer;
+            }
+
+            isCorrect(option) {
+                return option === this.answer;
+            }
+        }
+
+        // Class to manage the Quiz
+        class Quiz {
+            constructor(questions) {
+                this.questions = questions.map(data => new Question(data));
+                this.currentQuestionIndex = 0;
+                this.score = 0;
+            }
+
+            getCurrentQuestion() {
+                return this.questions[this.currentQuestionIndex];
+            }
+
+            guess(option) {
+                if (this.getCurrentQuestion().isCorrect(option)) {
+                    this.score++;
+                    alert("Correct!");
+                } else {
+                    alert("Wrong! The correct answer was: " + this.getCurrentQuestion().answer);
+                }
+                this.currentQuestionIndex++;
+            }
+
+            hasMoreQuestions() {
+                return this.currentQuestionIndex < this.questions.length;
+            }
+        }
+
+        // Game Initialization
+        const quiz = new Quiz(quizData);
+
+        function displayQuestion() {
+            const questionElement = document.getElementById('question');
+            const optionsElement = document.getElementById('options');
+
+            if (quiz.hasMoreQuestions()) {
+                const currentQuestion = quiz.getCurrentQuestion();
+                questionElement.innerText = currentQuestion.question;
+                optionsElement.innerHTML = ''; // Clear previous options
+
+                currentQuestion.options.forEach(option => {
+                    const li = document.createElement('li');
+                    li.innerText = option;
+                    li.onclick = () => {
+                        quiz.guess(option);
+                        displayQuestion(); // Show the next question
+                    };
+                    optionsElement.appendChild(li);
+                });
+
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const resultElement = document.getElementById('result');
+            const quizContainer = document.getElementById('quizContainer');
+            resultElement.innerText = `Quiz Over! Your score: ${quiz.score} out of ${quiz.questions.length}`;
+            quizContainer.style.display = 'none'; // Hide the quiz container
+            resultElement.style.display = 'block'; // Show the result
+        }
+
+        // Start the quiz
+        displayQuestion();
+    </script>
+
+</body>
+</html>

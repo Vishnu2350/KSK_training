@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Loop Examples</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Loop Examples</h1>
+    </header>
+
+    <section>
+        <h2>For Loop</h2>
+        <button onclick="forLoopExample()">Run For Loop</button>
+        <p class="result" id="forResult">Click the button to see the result.</p>
+    </section>
+
+    <section>
+        <h2>For...in Loop</h2>
+        <button onclick="forInExample()">Run For...in Loop</button>
+        <p class="result" id="forInResult">Click the button to see the result.</p>
+    </section>
+
+    <section>
+        <h2>For...of Loop</h2>
+        <button onclick="forOfExample()">Run For...of Loop</button>
+        <p class="result" id="forOfResult">Click the button to see the result.</p>
+    </section>
+
+    <section>
+        <h2>While Loop</h2>
+        <button onclick="whileLoopExample()">Run While Loop</button>
+        <p class="result" id="whileResult">Click the button to see the result.</p>
+    </section>
+
+    <script>
+        // For Loop Example
+        function forLoopExample() {
+            let result = '';
+            for (let i = 1; i <= 5; i++) {
+                result += `Number: ${i}<br>`;
+            }
+            document.getElementById("forResult").innerHTML = result; // Display result
+        }
+
+        // For...in Loop Example
+        function forInExample() {
+            const person = { name: "John", age: 30, city: "New York" };
+            let result = '';
+            for (let key in person) {
+                result += `${key}: ${person[key]}<br>`; // Access property and value
+            }
+            document.getElementById("forInResult").innerHTML = result; // Display result
+        }
+
+        // For...of Loop Example
+        function forOfExample() {
+            const fruits = ["Apple", "Banana", "Cherry"];
+            let result = '';
+            for (let fruit of fruits) {
+                result += `Fruit: ${fruit}<br>`; // Access each fruit
+            }
+            document.getElementById("forOfResult").innerHTML = result; // Display result
+        }
+
+        // While Loop Example
+        function whileLoopExample() {
+            let result = '';
+            let i = 1;
+            while (i <= 5) {
+                result += `Number: ${i}<br>`;
+                i++;
+            }
+            document.getElementById("whileResult").innerHTML = result; // Display result
+        }
+    </script>
+
+</body>
+
+</html>

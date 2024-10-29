@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Math Object Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Math Object Example</h1>
+    </header>
+
+    <!-- JavaScript Math Object Section -->
+    <section>
+        <h2>JavaScript Math Object</h2>
+
+        <!-- Basic Math Operations -->
+        <button onclick="showMathOperations()">Show Math Operations</button>
+        <p class="result" id="mathOperationsResult">Click the button to see Math operations.</p>
+
+        <!-- Generate Random Number -->
+        <button onclick="generateRandomNumber()">Generate Random Number</button>
+        <p class="result" id="randomNumberResult">Click the button to generate a random number.</p>
+
+        <!-- Generate Random Integer -->
+        <button onclick="generateRandomInteger()">Generate Random Integer</button>
+        <p class="result" id="randomIntegerResult">Click the button to generate a random integer.</p>
+    </section>
+
+    <!-- JavaScript for Math Operations -->
+    <script>
+        // Show Math Operations
+        function showMathOperations() {
+            const pi = Math.PI;
+            const sqrt = Math.sqrt(16); // Square root of 16
+            const power = Math.pow(2, 3); // 2 raised to the power of 3
+            const max = Math.max(10, 20, 30); // Maximum of the numbers
+            const min = Math.min(10, 20, 30); // Minimum of the numbers
+            const abs = Math.abs(-25); // Absolute value of -25
+
+            const result = `
+                PI: ${pi}<br>
+                Square Root of 16: ${sqrt}<br>
+                2 raised to the power of 3: ${power}<br>
+                Maximum value (10, 20, 30): ${max}<br>
+                Minimum value (10, 20, 30): ${min}<br>
+                Absolute value of -25: ${abs}
+            `;
+            document.getElementById("mathOperationsResult").innerHTML = result;
+        }
+
+        // Generate Random Number between 0 and 1
+        function generateRandomNumber() {
+            const randomNumber = Math.random(); // Generates a number between 0 and 1
+            const result = `Random Number (0 to 1): ${randomNumber}`;
+            document.getElementById("randomNumberResult").innerHTML = result;
+        }
+
+        // Generate Random Integer between 1 and 100
+        function generateRandomInteger() {
+            const min = 1;
+            const max = 100;
+            const randomInteger = Math.floor(Math.random() * (max - min + 1)) + min; // Generates a random integer between min and max
+            const result = `Random Integer (1 to 100): ${randomInteger}`;
+            document.getElementById("randomIntegerResult").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

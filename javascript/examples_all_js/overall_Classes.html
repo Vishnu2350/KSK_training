@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Classes Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            white-space: pre-wrap; /* Allows long code lines to wrap */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>JavaScript Classes Examples</h1>
+</header>
+
+<section>
+    <h2>Class Definition</h2>
+    <pre id="classDef"></pre>
+</section>
+
+<section>
+    <h2>Inheritance</h2>
+    <pre id="classInheritance"></pre>
+</section>
+
+<section>
+    <h2>Static Methods</h2>
+    <pre id="staticMethods"></pre>
+</section>
+
+<script>
+    // Class Definition
+    class Person {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        greet() {
+            return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+        }
+    }
+
+    const john = new Person("John", 30);
+    document.getElementById('classDef').innerText = `${john.greet()}`;
+
+    // Inheritance
+    class Employee extends Person {
+        constructor(name, age, position) {
+            super(name, age);
+            this.position = position;
+        }
+
+        describe() {
+            return `I am ${this.name}, a ${this.position}.`;
+        }
+    }
+
+    const jane = new Employee("Jane", 28, "Software Engineer");
+    document.getElementById('classInheritance').innerText = `${jane.greet()}\n${jane.describe()}`;
+
+    // Static Methods
+    class MathUtilities {
+        static add(a, b) {
+            return a + b;
+        }
+
+        static multiply(a, b) {
+            return a * b;
+        }
+    }
+
+    const sum = MathUtilities.add(5, 3);
+    const product = MathUtilities.multiply(4, 2);
+    document.getElementById('staticMethods').innerText = `Sum: ${sum}\nProduct: ${product}`;
+</script>
+
+</body>
+</html>

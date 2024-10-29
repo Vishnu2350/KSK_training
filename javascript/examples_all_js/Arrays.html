@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrays Example</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Arrays Example</h1>
+    </header>
+
+    <!-- JavaScript Arrays Section -->
+    <section>
+        <h2>JavaScript Arrays</h2>
+
+        <!-- Array Basics -->
+        <button onclick="showArrayBasics()">Show Array Basics</button>
+        <p class="result" id="arrayBasicsResult">Click the button to see array basics.</p>
+
+        <!-- Array Methods -->
+        <button onclick="showArrayMethods()">Show Array Methods</button>
+        <p class="result" id="arrayMethodsResult">Click the button to see array methods.</p>
+
+        <!-- Array Search -->
+        <button onclick="showArraySearch()">Show Array Search Example</button>
+        <p class="result" id="arraySearchResult">Click the button to see array search example.</p>
+
+        <!-- Array Sort -->
+        <button onclick="showArraySort()">Show Array Sort Example</button>
+        <p class="result" id="arraySortResult">Click the button to see array sort example.</p>
+
+        <!-- Array Iteration -->
+        <button onclick="showArrayIteration()">Show Array Iteration Example</button>
+        <p class="result" id="arrayIterationResult">Click the button to see array iteration example.</p>
+
+        <!-- Array Constants -->
+        <button onclick="showArrayConstants()">Show Array Constants Example</button>
+        <p class="result" id="arrayConstantsResult">Click the button to see array constants example.</p>
+    </section>
+
+    <!-- JavaScript for Array Operations -->
+    <script>
+        // Array Basics
+        function showArrayBasics() {
+            const fruits = ["Apple", "Banana", "Cherry"];
+            const result = `
+                Fruits Array: ${fruits}<br>
+                Length: ${fruits.length}
+            `;
+            document.getElementById("arrayBasicsResult").innerHTML = result;
+        }
+
+        // Array Methods
+        function showArrayMethods() {
+            const numbers = [10, 20, 30, 40, 50];
+            const pushedElement = numbers.push(60);
+            const poppedElement = numbers.pop();
+
+            const result = `
+                Original Array: [10, 20, 30, 40, 50]<br>
+                After Push (60): ${numbers}<br>
+                After Pop: ${poppedElement} was removed, now: ${numbers}
+            `;
+            document.getElementById("arrayMethodsResult").innerHTML = result;
+        }
+
+        // Array Search
+        function showArraySearch() {
+            const animals = ["Dog", "Cat", "Elephant", "Lion"];
+            const foundIndex = animals.indexOf("Elephant");
+            const includes = animals.includes("Cat");
+
+            const result = `
+                Animals Array: ${animals}<br>
+                Index of 'Elephant': ${foundIndex}<br>
+                Does array include 'Cat'? ${includes}
+            `;
+            document.getElementById("arraySearchResult").innerHTML = result;
+        }
+
+        // Array Sort
+        function showArraySort() {
+            const numbers = [5, 1, 8, 3, 7];
+            numbers.sort((a, b) => b - a); // Sorting in ascending order
+            // numbers.sort(); // Sorting in ascending order
+
+            const result = `
+                Original Array: [5, 1, 8, 3, 7]<br>
+                Sorted Array: ${numbers}
+            `;
+            document.getElementById("arraySortResult").innerHTML = result;
+        }
+
+        // Array Iteration
+        function showArrayIteration() {
+            const colors = ["Red", "Green", "Blue"];
+            let output = "Colors:<br>";
+
+            colors.forEach((color, i) => {
+                output += `- ${color}, ${i}<br>`;
+            });
+
+            const result = output;
+            document.getElementById("arrayIterationResult").innerHTML = result;
+        }
+
+        // Array Constants
+        function showArrayConstants() {
+            const constantArray = [1, 2, 3];
+            const result = `
+                Original Array: ${constantArray}<br>
+                Attempting to change an element...<br>
+            `;
+            try {
+                constantArray[0] = 10; // This is allowed
+                result += `Modified Array: ${constantArray}<br>`;
+                constantArray = [4, 5, 6]; // This will throw an error
+            } catch (error) {
+                result += `Error: ${error.message}`;
+            }
+            document.getElementById("arrayConstantsResult").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

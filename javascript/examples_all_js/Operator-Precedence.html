@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operator Precedence</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Operator Precedence</h1>
+    </header>
+
+    <section>
+        <h2>Example 1: Addition and Multiplication</h2>
+        <p>Expression: <code>2 + 3 * 4</code></p>
+        <button onclick="evaluateExample1()">Evaluate</button>
+        <p class="result" id="example1Result">Result will appear here.</p>
+    </section>
+
+    <section>
+        <h2>Example 2: Parentheses</h2>
+        <p>Expression:
+        <pre>( 2 + 3) * 4</pre>
+        </p>
+        <button onclick="evaluateExample2()">Evaluate</button>
+        <p class="result" id="example2Result">Result will appear here.</p>
+    </section>
+
+    <section>
+        <h2>Example 3: Mixed Operators</h2>
+        <p>Expression: <code>10 - 5 + 2 * 3</code></p>
+        <button onclick="evaluateExample3()">Evaluate</button>
+        <p class="result" id="example3Result">Result will appear here.</p>
+    </section>
+
+    <section>
+        <h2>Example 4: Logical Operators</h2>
+        <p>Expression: <code>true && false || true</code></p>
+        <button onclick="evaluateExample4()">Evaluate</button>
+        <p class="result" id="example4Result">Result will appear here.</p>
+    </section>
+
+    <section>
+        <h2>Operator Precedence Table</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Operator</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> () </td>
+                    <td>Grouping</td>
+                </tr>
+                <tr>
+                    <td> ** </td>
+                    <td>Exponentiation</td>
+                </tr>
+                <tr>
+                    <td> * / % </td>
+                    <td>Multiplication, Division, Modulus</td>
+                </tr>
+                <tr>
+                    <td> + - </td>
+                    <td>Addition, Subtraction</td>
+                </tr>
+                <tr>
+                    <td>
+                        <>
+                            <=>=
+                    </td>
+                    <td>Comparison</td>
+                </tr>
+                <tr>
+                    <td> == != === !== </td>
+                    <td>Equality</td>
+                </tr>
+                <tr>
+                    <td> && </td>
+                    <td>Logical AND</td>
+                </tr>
+                <tr>
+                    <td> || </td>
+                    <td>Logical OR</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+        function evaluateExample1() {
+            const result = 2 + 3 * 4; // Multiplication has higher precedence than addition
+            document.getElementById("example1Result").innerHTML = `Result: ${result}`; // Result will be 14
+        }
+
+        function evaluateExample2() {
+            const result = (2 + 3) * 4; // Parentheses take precedence over multiplication
+            document.getElementById("example2Result").innerHTML = `Result: ${result}`; // Result will be 20
+        }
+
+        function evaluateExample3() {
+            const result = 10 - 5 + 2 * 3; // Multiplication first, then addition and subtraction
+            document.getElementById("example3Result").innerHTML = `Result: ${result}`; // Result will be 11
+        }
+
+        function evaluateExample4() {
+            const result = true && false || true; // AND has higher precedence than OR
+            document.getElementById("example4Result").innerHTML = `Result: ${result}`; // Result will be true
+        }
+    </script>
+
+</body>
+
+</html>

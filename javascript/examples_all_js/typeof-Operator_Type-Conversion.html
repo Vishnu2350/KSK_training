@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Typeof and Type Conversion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Typeof and Type Conversion</h1>
+    </header>
+
+    <section>
+        <h2>JavaScript typeof Operator</h2>
+        <button onclick="typeofExample()">Run typeof Example</button>
+        <p class="result" id="typeofResult">Click the button to see the result.</p>
+    </section>
+
+    <section>
+        <h2>JavaScript Type Conversion</h2>
+        <button onclick="typeConversionExample()">Run Type Conversion Example</button>
+        <p class="result" id="typeConversionResult">Click the button to see the result.</p>
+    </section>
+
+    <script>
+        // JavaScript typeof Operator Example
+        function typeofExample() {
+            const variables = {
+                string: "Hello, world!",
+                number: 42,
+                boolean: true,
+                object: { name: "John", age: 30 },
+                array: [1, 2, 3],
+                nullValue: null,
+                undefinedValue: undefined,
+                symbolValue: Symbol('sym'),
+                bigIntValue: BigInt(12345678901234567890)
+            };
+
+            const results = Object.keys(variables).map(key => {
+                return `${key}: ${typeof variables[key]}`;
+            }).join('<br>');
+
+            document.getElementById("typeofResult").innerHTML = results;
+        }
+
+        // JavaScript Type Conversion Example
+        function typeConversionExample() {
+            const values = [
+                { input: "123", type: "String" },
+                { input: 456, type: "Number" },
+                { input: true, type: "Boolean" },
+                { input: null, type: "Null" },
+                { input: undefined, type: "Undefined" },
+                { input: "false", type: "String that looks like Boolean" }
+            ];
+
+            const results = values.map(value => {
+                let toNumber = Number(value.input);
+                let toString = String(value.input);
+                let toBoolean = Boolean(value.input);
+                
+                return `Input: ${value.input} (${value.type})<br>` +
+                       `To Number: ${toNumber} | To String: "${toString}" | To Boolean: ${toBoolean}<br>`;
+            }).join('<br>');
+
+            document.getElementById("typeConversionResult").innerHTML = results;
+        }
+    </script>
+
+</body>
+
+</html>

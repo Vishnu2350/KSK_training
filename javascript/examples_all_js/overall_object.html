@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Object Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            white-space: pre-wrap; /* Allows long code lines to wrap */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>JavaScript Object Examples</h1>
+</header>
+
+<section>
+    <h2>Object Definition</h2>
+    <pre id="objectDef"></pre>
+</section>
+
+<section>
+    <h2>Object Prototype</h2>
+    <pre id="objectProto"></pre>
+</section>
+
+<section>
+    <h2>Object Methods</h2>
+    <pre id="objectMethod"></pre>
+</section>
+
+<section>
+    <h2>Object Properties</h2>
+    <pre id="objectProperties"></pre>
+</section>
+
+<section>
+    <h2>Object Getters and Setters</h2>
+    <pre id="objectGetSet"></pre>
+</section>
+
+<section>
+    <h2>Object Protection</h2>
+    <pre id="objectProtection"></pre>
+</section>
+
+<script>
+    // Object Definition
+    const car = {
+        make: 'Toyota',
+        model: 'Camry',
+        year: 2020
+    };
+    document.getElementById('objectDef').innerText = JSON.stringify(car, null, 2);
+
+    // Object Prototype
+    function Vehicle(make, model) {
+        this.make = make;
+        this.model = model;
+    }
+    Vehicle.prototype.start = function() {
+        return `${this.make} ${this.model} is starting.`;
+    };
+
+    const myCar = new Vehicle('Honda', 'Civic');
+    document.getElementById('objectProto').innerText = myCar.start();
+
+    // Object Methods
+    const person = {
+        name: 'Alice',
+        greet: function() {
+            return `Hello, my name is ${this.name}.`;
+        }
+    };
+    document.getElementById('objectMethod').innerText = person.greet();
+
+    // Object Properties
+    const book = {
+        title: 'JavaScript: The Good Parts',
+        author: 'Douglas Crockford',
+        pages: 176
+    };
+    book.pages = 200; // Modify property
+    delete book.author; // Delete property
+    document.getElementById('objectProperties').innerText = JSON.stringify(book, null, 2);
+
+    // Object Getters and Setters
+    const individual = {
+        firstName: 'John',
+        lastName: 'Doe',
+        get fullName() {
+            return `${this.firstName} ${this.lastName}`;
+        },
+        set fullName(name) {
+            const parts = name.split(' ');
+            this.firstName = parts[0];
+            this.lastName = parts[1];
+        }
+    };
+    individual.fullName = 'Jane Smith'; // Set new full name
+    document.getElementById('objectGetSet').innerText = individual.fullName;
+
+    // Object Protection
+    const protectedObj = {
+        name: 'Alice',
+        age: 25
+    };
+
+    Object.freeze(protectedObj);
+    protectedObj.age = 30; // This will not change the age
+    document.getElementById('objectProtection').innerText = `Name: ${protectedObj.name}, Age: ${protectedObj.age}`;
+</script>
+
+</body>
+</html>

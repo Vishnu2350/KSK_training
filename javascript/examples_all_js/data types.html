@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Data Types Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Data Types Example</h1>
+    </header>
+
+    <!-- String Data Type -->
+    <section>
+        <h2>String Data Type</h2>
+        <p>String value: <span id="stringValue">N/A</span></p>
+        <button onclick="showString()">Show String</button>
+    </section>
+
+    <!-- Number Data Type -->
+    <section>
+        <h2>Number Data Type</h2>
+        <p>Number value: <span id="numberValue">N/A</span></p>
+        <button onclick="showNumber()">Show Number</button>
+    </section>
+
+    <!-- BigInt Data Type -->
+    <section>
+        <h2>BigInt Data Type</h2>
+        <p>BigInt value: <span id="bigintValue">N/A</span></p>
+        <button onclick="showBigInt()">Show BigInt</button>
+    </section>
+
+    <!-- Boolean Data Type -->
+    <section>
+        <h2>Boolean Data Type</h2>
+        <p>Boolean value: <span id="booleanValue">N/A</span></p>
+        <button onclick="showBoolean()">Show Boolean</button>
+    </section>
+
+    <!-- Undefined Data Type -->
+    <section>
+        <h2>Undefined Data Type</h2>
+        <p>Undefined value: <span id="undefinedValue">N/A</span></p>
+        <button onclick="showUndefined()">Show Undefined</button>
+    </section>
+
+    <!-- Null Data Type -->
+    <section>
+        <h2>Null Data Type</h2>
+        <p>Null value: <span id="nullValue">N/A</span></p>
+        <button onclick="showNull()">Show Null</button>
+    </section>
+
+    <!-- Symbol Data Type -->
+    <section>
+        <h2>Symbol Data Type</h2>
+        <p>Symbol value: <span id="symbolValue">N/A</span></p>
+        <button onclick="showSymbol()">Show Symbol</button>
+    </section>
+
+    <!-- Object Data Type -->
+    <section>
+        <h2>Object Data Type</h2>
+        <p>Object value: <span id="objectValue">N/A</span></p>
+        <button onclick="showObject()">Show Object</button>
+    </section>
+
+    <!-- JavaScript for Data Types -->
+    <script>
+        // String Data Type
+        function showString() {
+            let str = "Hello, World!";
+            let str1 = 'Hello, World!';
+            let str2 = `Hello, World!`;
+            document.getElementById("stringValue").innerText = str1 + " (Type: " + typeof str2 + ")";
+        }
+
+        // Number Data Type
+        function showNumber() {
+            let num = 42;
+            document.getElementById("numberValue").innerText = num + " (Type: " + typeof num + ")";
+        }
+
+        // BigInt Data Type
+        function showBigInt() {
+            let bigIntNum = 9007199254740991n; // 'n' denotes BigInt
+            document.getElementById("bigintValue").innerText = bigIntNum + " (Type: " + typeof bigIntNum + ")";
+        }
+
+        // Boolean Data Type
+        function showBoolean() {
+            let isTrue = true;
+            document.getElementById("booleanValue").innerText = isTrue + " (Type: " + typeof isTrue + ")";
+        }
+
+        // Undefined Data Type
+        function showUndefined() {
+            let undefinedVar;
+            document.getElementById("undefinedValue").innerText = undefinedVar + " (Type: " + typeof undefinedVar + ")";
+        }
+
+        // Null Data Type
+        function showNull() {
+            let nullVar = null;
+            document.getElementById("nullValue").innerText = nullVar + " (Type: " + typeof nullVar + ")";
+        }
+
+        // Symbol Data Type
+        function showSymbol() {
+            let symbol = Symbol('id');
+            document.getElementById("symbolValue").innerText = symbol.toString() + " (Type: " + typeof symbol + ")";
+        }
+
+        // Object Data Type
+        function showObject() {
+            let obj = { name: "John", age: 30 };
+            document.getElementById("objectValue").innerText = JSON.stringify(obj) + " (Type: " + typeof obj + ")";
+        }
+    </script>
+
+</body>
+
+</html>

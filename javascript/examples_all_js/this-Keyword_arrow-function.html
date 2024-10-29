@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Keyword and Arrow Function Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>This Keyword and Arrow Function Example</h1>
+    </header>
+
+    <section>
+        <h2>Regular Function</h2>
+        <button onclick="regularFunction()">Click to see `this` in a regular function</button>
+    </section>
+
+    <section>
+        <h2>Arrow Function</h2>
+        <button onclick="arrowFunction()">Click to see `this` in an arrow function</button>
+    </section>
+
+    <script>
+        const person = {
+            name: 'Alice',
+            regularFunction: function() {
+                setTimeout(function() {
+                    console.log('Hello from regular function: ' + this.name); // `this` is not Alice
+                }, 1000);
+            },
+            arrowFunction: function() {
+                setTimeout(() => {
+                    console.log('Hello from arrow function: ' + this.name); // `this` is Alice
+                }, 1000);
+            }
+        };
+
+        function regularFunction() {
+            person.regularFunction();
+        }
+
+        function arrowFunction() {
+            person.arrowFunction();
+        }
+    </script>
+
+</body>
+
+</html>

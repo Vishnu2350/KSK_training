@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Bitwise Operations</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Bitwise Operations</h1>
+    </header>
+
+    <section>
+        <h2>Bitwise AND</h2>
+        <button onclick="bitwiseAnd()">Run Bitwise AND</button>
+        <p class="result" id="andResult">Click the button to see the result.</p>
+    </section>
+
+    <section>
+        <h2>Bitwise OR</h2>
+        <button onclick="bitwiseOr()">Run Bitwise OR</button>
+        <p class="result" id="orResult">Click the button to see the result.</p>
+    </section>
+
+    <section>
+        <h2>Bitwise XOR</h2>
+        <button onclick="bitwiseXor()">Run Bitwise XOR</button>
+        <p class="result" id="xorResult">Click the button to see the result.</p>
+    </section>
+
+    <section>
+        <h2>Bitwise NOT</h2>
+        <button onclick="bitwiseNot()">Run Bitwise NOT</button>
+        <p class="result" id="notResult">Click the button to see the result.</p>
+    </section>
+
+    <section>
+        <h2>Left Shift</h2>
+        <button onclick="leftShift()">Run Left Shift</button>
+        <p class="result" id="leftShiftResult">Click the button to see the result.</p>
+    </section>
+
+    <section>
+        <h2>Right Shift</h2>
+        <button onclick="rightShift()">Run Right Shift</button>
+        <p class="result" id="rightShiftResult">Click the button to see the result.</p>
+    </section>
+
+    <script>
+        // Bitwise AND Example
+        function bitwiseAnd() {
+            const a = 5;  // Binary: 0101
+            const b = 3;  // Binary: 0011
+            const result = a & b; // Result: 0001
+            document.getElementById("andResult").innerHTML = `5 & 3 = ${result} (Binary: ${result.toString(2)})`;
+        }
+
+        // Bitwise OR Example
+        function bitwiseOr() {
+            const a = 5;  // Binary: 0101
+            const b = 3;  // Binary: 0011
+            const result = a | b; // Result: 0111
+            document.getElementById("orResult").innerHTML = `5 | 3 = ${result} (Binary: ${result.toString(2)})`;
+        }
+
+        // Bitwise XOR Example
+        function bitwiseXor() {
+            const a = 5;  // Binary: 0101
+            const b = 3;  // Binary: 0011
+            const result = a ^ b; // Result: 0010
+            document.getElementById("xorResult").innerHTML = `5 ^ 3 = ${result} (Binary: ${result.toString(2)})`;
+        }
+
+        // Bitwise NOT Example
+        function bitwiseNot() {
+            const a = 5;  // Binary: 0101
+            const result = ~a; // Result: 1010 (Two's complement)
+            document.getElementById("notResult").innerHTML = `~5 = ${result} (Binary: ${result.toString(2)})`;
+        }
+
+        // Left Shift Example
+        function leftShift() {
+            const a = 5;  // Binary: 0101
+            const result = a << 1; // Result: 1010 (Shifted left by 1)
+            document.getElementById("leftShiftResult").innerHTML = `5 << 1 = ${result} (Binary: ${result.toString(2)})`;
+        }
+
+        // Right Shift Example
+        function rightShift() {
+            const a = 5;  // Binary: 0101
+            const result = a >> 1; // Result: 0010 (Shifted right by 1)
+            document.getElementById("rightShiftResult").innerHTML = `5 >> 1 = ${result} (Binary: ${result.toString(2)})`;
+        }
+    </script>
+
+</body>
+
+</html>
