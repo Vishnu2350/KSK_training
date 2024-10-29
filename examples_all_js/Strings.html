@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Strings Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button, input {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover, input:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Strings Example</h1>
+    </header>
+
+    <!-- JavaScript Strings Section -->
+    <section>
+        <h2>JavaScript String Functions</h2>
+
+        <!-- String Methods -->
+        <button onclick="stringMethods()">Show String Methods</button>
+        <p class="result" id="stringMethodsResult">Click the button to see string methods.</p>
+
+        <!-- String Search -->
+        <input type="text" id="searchString" placeholder="Enter a string to search">
+        <button onclick="searchString()">Search String</button>
+        <p class="result" id="searchResult">Search the string above.</p>
+
+        <!-- String Template Literals -->
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="number" id="age" placeholder="Enter your age">
+        <button onclick="templateLiteral()">Show Template Literal</button>
+        <p class="result" id="templateResult">Enter your name and age to see the result.</p>
+
+        <!-- Additional String Functions -->
+        <button onclick="additionalStringFunctions()">Show Additional String Functions</button>
+        <p class="result" id="additionalResult">Click to see more string functions.</p>
+    </section>
+
+    <!-- JavaScript for String Operations -->
+    <script>
+        // String example
+        const exampleString = "Hello, World! Welcome to JavaScript.";
+
+        // Function to demonstrate string methods
+        function stringMethods() {
+            const length = exampleString.length;
+            const upperCase = exampleString.toUpperCase();
+            const lowerCase = exampleString.toLowerCase();
+            const substring = exampleString.substring(0, 5);
+            const replaced = exampleString.replace("World", "Everyone");
+
+            const result = `
+                Length: ${length}<br>
+                Uppercase: ${upperCase}<br>
+                Lowercase: ${lowerCase}<br>
+                Substring (0-5): ${substring}<br>
+                Replaced String: ${replaced}
+            `;
+            document.getElementById("stringMethodsResult").innerHTML = result;
+        }
+
+        // Function to search for a string
+        function searchString() {
+            const searchTerm = document.getElementById("searchString").value;
+            const index = exampleString.indexOf(searchTerm);
+            const result = (index !== -1)
+                ? `Found "${searchTerm}" at index ${index}.`
+                : `"${searchTerm}" not found in the string.`;
+            document.getElementById("searchResult").innerHTML = result;
+        }
+
+        // Function to show template literal
+        function templateLiteral() {
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const result = `Hello, my name is ${name} and I am ${age} years old.`;
+            document.getElementById("templateResult").innerHTML = result;
+        }
+
+        // Additional String Functions
+        function additionalStringFunctions() {
+            // Trim whitespace
+            const trimmedString = exampleString.trim();
+
+            // Check if string includes a substring
+            const includesJavaScript = exampleString.includes("JavaScript");
+
+            // Extract a single character
+            const charAtFive = exampleString.charAt(5);
+
+            // Split string into an array of words
+            const splitWords = exampleString.split(" ");
+
+            // Concatenate strings
+            const newString = exampleString.concat(" Let's learn more.");
+
+            // Repeat string
+            const repeatedString = "Repeat ".repeat(3);
+
+            // Check if string starts/ends with a substring
+            const startsWithHello = exampleString.startsWith("Hello");
+            const endsWithPeriod = exampleString.endsWith(".");
+
+            // Slice a part of a string
+            const slicedString = exampleString.slice(7, 12);
+
+            // Pad string
+            const paddedString = "5".padStart(4, "0");
+
+            const result = `
+                Trimmed String: "${trimmedString}"<br>
+                Includes 'JavaScript': ${includesJavaScript}<br>
+                Character at Index 5: ${charAtFive}<br>
+                Split into Words: ${splitWords.join(", ")}<br>
+                Concatenated String: ${newString}<br>
+                Repeated String: ${repeatedString}<br>
+                Starts with 'Hello': ${startsWithHello}<br>
+                Ends with '.': ${endsWithPeriod}<br>
+                Sliced String (7-12): ${slicedString}<br>
+                Padded String: ${paddedString}
+            `;
+            document.getElementById("additionalResult").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

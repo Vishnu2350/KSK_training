@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Errors</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Errors</h1>
+    </header>
+
+    <section>
+        <h2>Types of JavaScript Errors</h2>
+        <ul>
+            <li><strong>Syntax Error:</strong> Occurs when there is a mistake in the syntax of the code (e.g., missing parentheses).</li>
+            <li><strong>Reference Error:</strong> Happens when a variable is referenced that is not declared.</li>
+            <li><strong>Type Error:</strong> Occurs when a value is not of the expected type (e.g., trying to call a non-function).</li>
+            <li><strong>Range Error:</strong> Happens when a value is not within a valid range (e.g., invalid array length).</li>
+            <li><strong>Eval Error:</strong> Relates to the `eval()` function, generally not used.</li>
+            <li><strong>URI Error:</strong> Occurs when there is an error in encoding or decoding URI components.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Example of Syntax Error</h2>
+        <button onclick="causeSyntaxError()">Cause Syntax Error</button>
+        <p class="result" id="syntaxErrorResult">Result will appear here.</p>
+    </section>
+
+    <section>
+        <h2>Example of Reference Error</h2>
+        <button onclick="causeReferenceError()">Cause Reference Error</button>
+        <p class="result" id="referenceErrorResult">Result will appear here.</p>
+    </section>
+
+    <section>
+        <h2>Example of Type Error</h2>
+        <button onclick="causeTypeError()">Cause Type Error</button>
+        <p class="result" id="typeErrorResult">Result will appear here.</p>
+    </section>
+
+    <section>
+        <h2>Error Handling with try...catch</h2>
+        <button onclick="handleError()">Handle Error</button>
+        <p class="result" id="handleErrorResult">Result will appear here.</p>
+    </section>
+
+    <script>
+        function causeSyntaxError() {
+            // Intentionally causing a syntax error
+            eval("alert('Hello)"); // Missing closing quote
+        }
+
+        function causeReferenceError() {
+            // Intentionally causing a reference error
+            const result = nonExistentFunction(); // nonExistentFunction is not defined
+            document.getElementById("referenceErrorResult").innerHTML = `Result: ${result}`;
+        }
+
+        function causeTypeError() {
+            // Intentionally causing a type error
+            const notAFunction = 42;
+            notAFunction(); // Trying to call a number as a function
+        }
+
+        function handleError() {
+            try {
+                // Intentionally causing a syntax error
+                const result = eval("2 + ;"); // Invalid expression
+                document.getElementById("handleErrorResult").innerHTML = `Result: ${result}`;
+            } catch (error) {
+                // Catching the error
+                document.getElementById("handleErrorResult").innerHTML = `Error: ${error.message}`;
+            } finally {
+                console.log("Execution finished.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

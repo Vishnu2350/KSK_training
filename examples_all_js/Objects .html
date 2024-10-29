@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions and Objects Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Functions and Objects Example</h1>
+    </header>
+
+    <!-- JavaScript Objects -->
+    <section>
+        <h2>JavaScript Objects</h2>
+        <button onclick="showObject()">Show Object Properties</button>
+        <p class="result" id="objectResult">N/A</p>
+
+        <button onclick="showObjectMethods()">Show Object Method</button>
+        <p class="result" id="objectMethodResult">N/A</p>
+    </section>
+
+    <!-- JavaScript Functions for Objects -->
+    <script>
+        // JavaScript Object Example
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 30,
+            city: "New York",
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            },
+            incrementAge: function() {
+                this.age += 1;
+            }
+        };
+
+        // Function to show object properties
+        function showObject() {
+            let result = "Name: " + person.firstName + " " + person.lastName + "<br>" +
+                         "Age: " + person.age + "<br>" +
+                         "City: " + person.city;
+            document.getElementById("objectResult").innerHTML = result;
+        }
+
+        // Function to show object methods (e.g., fullName method)
+        function showObjectMethods() {
+            person.incrementAge();  // Increment age by 1
+            let result = "Full Name: " + person.fullName() + "<br>" +
+                         "New Age after increment: " + person.age;
+            document.getElementById("objectMethodResult").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Classes, Modules, JSON, and Debugging</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Classes, Modules, JSON, and Debugging</h1>
+    </header>
+
+    <section>
+        <h2>JavaScript Class</h2>
+        <button onclick="showClassExample()">Show Class Example</button>
+        <pre id="classOutput"></pre>
+    </section>
+
+    <section>
+        <h2>JavaScript Modules</h2>
+        <button onclick="showModuleExample()">Show Module Example</button>
+        <pre id="moduleOutput"></pre>
+    </section>
+
+    <section>
+        <h2>JSON Example</h2>
+        <button onclick="showJsonExample()">Show JSON Example</button>
+        <pre id="jsonOutput"></pre>
+    </section>
+
+    <section>
+        <h2>Debugging Example</h2>
+        <button onclick="showDebugExample()">Show Debugging Example</button>
+        <pre id="debugOutput"></pre>
+    </section>
+
+</body>
+<script type="module">
+    // Exported class (Module Example)
+    export class Person {
+        constructor(name) {
+            this.name = name;
+        }
+
+        sayHello() {
+            return `Hello, my name is ${this.name}.`;
+        }
+    }
+
+    // Exported constant (Module Example)
+    export const greeting = "Welcome to the JavaScript Modules!";
+
+    // Function to display class example
+    window.showClassExample = function () {
+        const alice = new Person('Alice');
+        document.getElementById('classOutput').innerText = alice.sayHello();
+    };
+
+    // Function to display module example
+    window.showModuleExample = function () {
+        const john = new Person('John');
+        const output = `${john.sayHello()}\n${greeting}`;
+        document.getElementById('moduleOutput').innerText = output;
+    };
+
+    // Function to display JSON example
+    window.showJsonExample = function () {
+        // Parsing JSON into an object
+        const personJSON = '{"name": "Alice", "age": 30}';
+        const person = JSON.parse(personJSON);
+
+        // Stringifying an object into JSON
+        const newPerson = { name: "Bob", age: 25 };
+        const newPersonJSON = JSON.stringify(newPerson);
+
+        // Display the result
+        document.getElementById('jsonOutput').innerText = `
+    Parsed JSON:\nName: ${person.name}, Age: ${person.age}
+    Stringified Object: ${newPersonJSON}`;
+    };
+
+    // Function to show debugging example
+    window.showDebugExample = function () {
+        const result1 = divide(10, 2);
+        const result2 = divide(10, 0);
+
+        document.getElementById('debugOutput').innerText = `
+    Division Results:
+    10 / 2 = ${result1}
+    10 / 0 = ${result2}
+`;
+    };
+
+    // Debugging function with error handling
+    function divide(a, b) {
+        if (b === 0) {
+            console.error('Error: Division by zero');
+            return 'undefined';
+        }
+        return a / b;
+    }
+
+</script>
+
+</html>

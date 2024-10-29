@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Break, Continue, and Iterables</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Break, Continue, and Iterables</h1>
+    </header>
+
+    <section>
+        <h2>Break Statement</h2>
+        <button onclick="breakExample()">Run Break Example</button>
+        <p class="result" id="breakResult">Click the button to see the result.</p>
+    </section>
+
+    <section>
+        <h2>Continue Statement</h2>
+        <button onclick="continueExample()">Run Continue Example</button>
+        <p class="result" id="continueResult">Click the button to see the result.</p>
+    </section>
+
+    <section>
+        <h2>JavaScript Iterables</h2>
+        <button onclick="iterablesExample()">Run Iterables Example</button>
+        <p class="result" id="iterablesResult">Click the button to see the result.</p>
+    </section>
+
+    <script>
+        // Break Statement Example
+        function breakExample() {
+            let result = '';
+            for (let i = 1; i <= 10; i++) {
+                if (i === 5) {
+                    result += 'Loop terminated at 5<br>';
+                    break; // Exit the loop when i is 5
+                }
+                result += `Number: ${i}<br>`;
+            }
+            document.getElementById("breakResult").innerHTML = result; // Display result
+        }
+
+        // Continue Statement Example
+        function continueExample() {
+            let result = '';
+            for (let i = 1; i <= 10; i++) {
+                if (i === 5) {
+                    result += 'Skipping number 5<br>';
+                    continue; // Skip the current iteration when i is 5
+                }
+                result += `Number: ${i}<br>`;
+            }
+            document.getElementById("continueResult").innerHTML = result; // Display result
+        }
+
+        // JavaScript Iterables Example
+        function iterablesExample() {
+            const fruits = ["Apple", "Banana", "Cherry"];
+            let result = 'Fruits:<br>';
+            for (const fruit of fruits) {
+                result += `- ${fruit}<br>`; // Use for...of to iterate over an array
+            }
+            document.getElementById("iterablesResult").innerHTML = result; // Display result
+        }
+    </script>
+
+</body>
+
+</html>

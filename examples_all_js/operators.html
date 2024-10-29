@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operators Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Operators Example</h1>
+    </header>
+
+    <!-- Arithmetic Operators -->
+    <section>
+        <h2>Arithmetic Operators</h2>
+        <p>Result of 10 + 5: <span id="arithmeticResult">N/A</span></p>
+        <button onclick="showArithmetic()">Calculate 10 + 5</button>
+    </section>
+
+    <!-- Assignment Operators -->
+    <section>
+        <h2>Assignment Operators</h2>
+        <p>Result after assignment: <span id="assignmentResult">N/A</span></p>
+        <button onclick="showAssignment()">Assign and Add 10 to 5</button>
+    </section>
+
+    <!-- Comparison Operators -->
+    <section>
+        <h2>Comparison Operators</h2>
+        <p>Comparison result (10 == '10'): <span id="comparisonResult">N/A</span></p>
+        <button onclick="showComparison()">Compare 10 == '10'</button>
+    </section>
+
+    <!-- String Operators -->
+    <section>
+        <h2>String Operators</h2>
+        <p>Concatenation result: <span id="stringResult">N/A</span></p>
+        <button onclick="showStringConcat()">Concatenate 'Hello' + ' World'</button>
+    </section>
+
+    <!-- Logical Operators -->
+    <section>
+        <h2>Logical Operators</h2>
+        <p>Logical AND result (true && false): <span id="logicalResult">N/A</span></p>
+        <button onclick="showLogical()">Evaluate true && false</button>
+    </section>
+
+    <!-- Bitwise Operators -->
+    <section>
+        <h2>Bitwise Operators</h2>
+        <p>Bitwise AND result (5 & 1): <span id="bitwiseResult">N/A</span></p>
+        <button onclick="showBitwise()">Calculate 5 & 1 (Bitwise AND)</button>
+    </section>
+
+    <!-- Ternary Operators -->
+    <section>
+        <h2>Ternary Operators</h2>
+        <p>Ternary operation result: <span id="ternaryResult">N/A</span></p>
+        <button onclick="showTernary()">Evaluate 10 > 5 ? 'True' : 'False'</button>
+    </section>
+
+    <!-- Type Operators -->
+    <section>
+        <h2>Type Operators</h2>
+        <p>Type of 'Hello': <span id="typeResult">N/A</span></p>
+        <button onclick="showType()">Show type of 'Hello'</button>
+    </section>
+
+    <!-- JavaScript for Operators -->
+    <script>
+        // Arithmetic Operators
+        function showArithmetic() {
+            let result = 10 + 5; // Basic addition
+            document.getElementById("arithmeticResult").innerText = result;
+        }
+
+        // Assignment Operators
+        function showAssignment() {
+            let x = 5;
+            x += 10; // Assign and add
+            document.getElementById("assignmentResult").innerText = x;
+        }
+
+        // Comparison Operators
+        function showComparison() {
+            let result = (10 == '10'); // Equality comparison
+            document.getElementById("comparisonResult").innerText = result;
+        }
+
+        // String Operators
+        function showStringConcat() {
+            let result = 'Hello' + ' World'; // String concatenation
+            document.getElementById("stringResult").innerText = result;
+        }
+
+        // Logical Operators
+        function showLogical() {
+            let result = (true && false); // Logical AND
+            document.getElementById("logicalResult").innerText = result;
+        }
+
+        // Bitwise Operators
+        function showBitwise() {
+            let result = 5 & 1; // Bitwise AND
+            document.getElementById("bitwiseResult").innerText = result;
+        }
+
+        // Ternary Operators
+        function showTernary() {
+            let result = (10 > 5) ? 'True' : 'False'; // Ternary operator
+            document.getElementById("ternaryResult").innerText = result;
+        }
+
+        // Type Operators
+        function showType() {
+            let result = typeof 'Hello'; // Type operator
+            document.getElementById("typeResult").innerText = result;
+        }
+    </script>
+
+</body>
+
+</html>

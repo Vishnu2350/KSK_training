@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Use Strict Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .code {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript "use strict"; Example</h1>
+    </header>
+
+    <section>
+        <h2>What is "use strict"?</h2>
+        <p>"use strict"; is a directive introduced in ECMAScript 5 that helps to write cleaner and more secure JavaScript code. It helps to catch common coding errors and "unsafe" actions such as defining global variables unintentionally.</p>
+    </section>
+
+    <section>
+        <h2>Example of "use strict"</h2>
+        <button onclick="strictModeExample()">Run Strict Mode Example</button>
+        <p class="result" id="strictResult">Result will appear here.</p>
+    </section>
+
+    <section>
+        <h2>Example without "use strict"</h2>
+        <button onclick="nonStrictModeExample()">Run Non-Strict Mode Example</button>
+        <p class="result" id="nonStrictResult">Result will appear here.</p>
+    </section>
+
+    <script>
+        function strictModeExample() {
+            "use strict"; // Enabling strict mode
+
+            try {
+                // Attempting to use an undeclared variable
+                undeclaredVar = "This will throw an error"; // ReferenceError
+            } catch (error) {
+                document.getElementById("strictResult").innerHTML = "Strict Mode Error: " + error.message;
+            }
+        }
+
+        function nonStrictModeExample() {
+            // No strict mode, this will not throw an error
+            undeclaredVar = "This will not throw an error"; // No ReferenceError
+
+            document.getElementById("nonStrictResult").innerHTML = "Non-Strict Mode: " + undeclaredVar;
+        }
+    </script>
+
+</body>
+
+</html>
